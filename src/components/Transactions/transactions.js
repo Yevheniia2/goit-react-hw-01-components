@@ -1,16 +1,17 @@
 import PropTypes from 'prop-types';
+import { TableBody, TableRow, TableCell } from './transactions.styled';
 
 export default function Transactions ({ items }) {
     return (
-        <tbody>
+        <TableBody>
         {items.map(({ id, type, amount, currency }) => (
-            <tr key={id}>
-                <td>{type}</td>
-                <td>{amount}</td>
-                <td>{currency}</td>
-            </tr>
+            <TableRow key={id}>
+                <TableCell>{type}</TableCell>
+                <TableCell>{amount}</TableCell>
+                <TableCell>{currency}</TableCell>
+            </TableRow>
         ))}
-        </tbody>
+        </TableBody>
     );
 }
 

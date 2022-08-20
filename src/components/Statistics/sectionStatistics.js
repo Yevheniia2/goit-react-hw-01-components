@@ -1,12 +1,13 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import { StatisticsBox, Title } from './statistics.styled';
 
 export default function SectionStatistics({title, children}) {
     return(
-        <section className={"statistics"}>
-            {title && <h2>{title}</h2>}
+        <StatisticsBox>
+            {title && <Title>{title}</Title>}
             {children}
-        </section>
+        </StatisticsBox>
     );
 }
 

@@ -1,17 +1,21 @@
 import PropTypes from 'prop-types';
+import { StatList, StatItem, Label, Persentage } from './statistics.styled';
 
 export default function Statistics ({ stats }) {
     return (
-        <ul className={"stat-list"}>
+        <StatList>
             {stats.map(({id, label, percentage}) => (
-                <li key={id} className={"item"}>
-                    <span className={"label"}>{label}</span>
-                    <span className={"percentage"}>{percentage}%</span>
-                </li>
+                <StatItem key={id} style={{ backgroundColor: randomColor() }}>
+                    <Label>{label}</Label>
+                    <Persentage>{percentage}%</Persentage>
+                </StatItem>
             ))}
-        </ul>
+        </StatList>
     );
 }
+
+const randomColor = () =>
+'#' + Math.floor(Math.random() * 16777215).toString(16);
 
 Statistics.propTypes = {
     id: PropTypes.string.isRequired,

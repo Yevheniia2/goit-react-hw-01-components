@@ -1,38 +1,38 @@
 // import profile from "./profile.css";
 import PropTypes from 'prop-types';
+import { Avatar, ProfileBox, ProfileName, Description, Tag, Location, Stats, ProfileItem, Label, Quantity } from './profile.styled';
 
 
 // const data = profiles[0];
 
 export default function Profile({ username, tag, location, avatar, followers, views, likes }) {
     return (
-        <div className={'profile'}>
-            <div className={'description'}>
-                <img
+        <ProfileBox>
+            <Description>
+                <Avatar
                     src={avatar}
                     alt="User avatar"
-                    className={'avatar'}
                 />
-                <p className={'username'}>{username}</p>
-                <p className={'tag'}>@{tag}</p>
-                <p className={'location'}>{location}</p>
-            </div>
+                <ProfileName>{username}</ProfileName>
+                <Tag>@{tag}</Tag>
+                <Location>{location}</Location>
+            </Description>
 
-            <ul className={'stats'}>
-                <li>
-                    <span className={'label'}>Followers</span>
-                    <span className={'quantity'}>{followers}</span>
-                </li>
-                <li>
-                    <span className={'label'}>Views</span>
-                    <span className={'quantity'}>{views}</span>
-                </li>
-                <li>
-                    <span className={'label'}>Likes</span>
-                    <span className={'quantity'}>{likes}</span>
-                </li>
-            </ul>
-        </div>
+            <Stats>
+                <ProfileItem>
+                    <Label>Followers</Label>
+                    <Quantity>{followers}</Quantity>
+                </ProfileItem>
+                <ProfileItem>
+                    <Label>Views</Label>
+                    <Quantity>{views}</Quantity>
+                </ProfileItem>
+                <ProfileItem>
+                    <Label>Likes</Label>
+                    <Quantity>{likes}</Quantity>
+                </ProfileItem>
+            </Stats>
+        </ProfileBox>
     );
 }
 

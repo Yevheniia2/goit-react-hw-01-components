@@ -1,18 +1,19 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import { TableBox, TableHeadBox, TableRow, TableHeadName } from './transactions.styled';
 
 export default function SectionTransactions({ children }) {
     return(
-        <table className={"transaction-history"}>
-            <thead>
-                <tr>
-                    <th>Type</th>
-                    <th>Amount</th>
-                    <th>Currency</th>
-                </tr>
-            </thead>            
+        <TableBox>
+            <TableHeadBox>
+                <TableRow>
+                    <TableHeadName>Type</TableHeadName>
+                    <TableHeadName>Amount</TableHeadName>
+                    <TableHeadName>Currency</TableHeadName>
+                </TableRow>
+            </TableHeadBox>            
             {children}
-        </table>
+        </TableBox>
     );
 }
 
