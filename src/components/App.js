@@ -5,9 +5,8 @@ import SectionStatistics from './Statistics/sectionStatistics';
 import Statistics from "./Statistics/statistics.js";
 import statData from './Statistics/statistics.json';
 
-import SectionFriends from "./Friends/sectionFriends.js";
-import FriendList from "./Friends/friendList.js";
-import friends from './Friends/friends.json';
+import FriendList from "./FriendList/friendList.js";
+import friends from './FriendList/friends.json';
 
 import SectionTransactions from "./Transactions/sectionTransactions.js";
 import Transactions from "./Transactions/transactions.js";
@@ -36,9 +35,7 @@ export default function App() {
       </SectionStatistics>
     </div>
     <div>
-      <SectionFriends>
-        <FriendList friends={friends} />
-      </SectionFriends>
+      <FriendList friends={friends} />
     </div>
     <div>
       <SectionTransactions>
